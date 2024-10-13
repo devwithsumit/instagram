@@ -1,0 +1,20 @@
+<% if(typeof error !== 'undefined' && error.length > 0){ %>
+<div id="flash" class="bg-red-100 left-0 top-0 w-full absolute border-l-4 border-red-500 text-red-700 p-4 md:px-10">
+    <p class="font-bold">Error</p>
+    <p class="text-sm"><%= error %></p>
+</div>
+<% } %>
+<% if(typeof success !== 'undefined' && success.length > 0){ %>
+<div id="flash" class="bg-green-100 left-0 top-0 w-full absolute border-l-4 border-green-500 text-green-700 p-4 md:px-10">
+    <p class="font-bold">success</p>
+    <p class="text-sm">
+        <%= succces %>
+    </p>
+</div>
+<% } %>
+
+<script>
+    setTimeout(() => {
+        document.querySelector('#flash').style.opacity = 0;
+    }, 10000) 
+</script>
